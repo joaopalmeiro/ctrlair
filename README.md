@@ -1,2 +1,3 @@
-# ctrlair
+# Ctrlair
+
 A toolbox for Altair.

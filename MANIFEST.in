@@ -1,6 +1,3 @@
-# Include the version file
-include VERSION
-
 # Include the README
 include *.md
 

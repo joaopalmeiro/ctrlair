@@ -1,7 +1,2 @@
-import pathlib
-
-home = pathlib.Path(__file__).parents[2].resolve()
-version = (home / "VERSION").read_text()
-
-__version__ = version
+__version__ = "0.1.1"
 __author__ = "João Palmeiro"

@@ -4,11 +4,20 @@ import pathlib
 here = pathlib.Path(__file__).parent.resolve()
 
 long_description = (here / "README.md").read_text(encoding="utf-8")
-version = (here / "VERSION").read_text()
+
+
+def get_version(root, rel_path):
+    for line in (root / rel_path).read_text().splitlines():
+        if line.startswith("__version__"):
+            delim = '"' if '"' in line else "'"
+            return line.split(delim)[1]
+    else:
+        raise RuntimeError("Unable to find version string.")
+
 
 setup(
     name="ctrlair",
-    version=version,
+    version=get_version(here, "src/ctrlair/__init__.py"),
     description="A toolbox for Altair.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -29,8 +38,6 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3 :: Only",
-        "Operating System :: OS Independent",
-        "Typing :: Typed",
     ],
     keywords="altair, data, visualization",
     package_dir={"": "src"},

@@ -1,8 +1,6 @@
-from collections import namedtuple
+from typing import NamedTuple
 
-__all__ = ["square", "up_pointing_triangle", "star", "line_cross", "right_triangle"]
-
-Shape = namedtuple("Shape", ["Name", "Path"])
+Shape = NamedTuple("Shape", [("Name", str), ("Path", str)])
 
 square = Shape("Square", "M -1 1 L 1 1 L 1 -1 L -1 -1 Z")
 
@@ -15,4 +13,4 @@ star = Shape(
 
 line_cross = Shape("Line Cross", "M 1 1 L -1 -1 M -1 1 L 1 -1")
 
-right_triangle = Shape("Right Triangle", "M 1 1 L -1 -1 L -1 1 Z")
+lower_left_triangle = Shape("Lower Left Triangle", "M 1 1 L -1 -1 L -1 1 Z")

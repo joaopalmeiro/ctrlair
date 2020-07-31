@@ -29,6 +29,8 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3 :: Only",
+        "Operating System :: OS Independent",
+        "Typing :: Typed",
     ],
     keywords="altair, data, visualization",
     package_dir={"": "src"},

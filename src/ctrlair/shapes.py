@@ -19,6 +19,8 @@ star = Shape(
 )
 
 times = Shape("Times", "M 1 1 L -1 -1 M -1 1 L 1 -1")
+plus = Shape("Plus", "M 0 1 L 0 -1 M -1 0 L 1 0")
+minus = Shape("Minus", "M -1 0 L 1 0")
 
 lower_right_triangle = Shape("Lower Right Triangle", "M -1 1 L 1 -1 L 1 1 Z")
 lower_left_triangle = Shape("Lower Left Triangle", "M 1 1 L -1 -1 L -1 1 Z")
@@ -42,4 +44,10 @@ shield = Shape("Shield", "M -1 -1 L -1 0 A 1 1 0 0 0 1 0 L 1 -1 Z")
 
 up_pointing_angle_bracket = Shape(
     "Up-Pointing Angle Bracket", "M 0 -1 L 1 0 L 1 1 L 0 0 L -1 1 L -1 0 Z"
+)
+
+hourglass = Shape("Hourglass", "M -1 -1 L 1 -1 L -1 1 L -1 1 L 1 1 L -1 -1 Z")
+
+rounded_tip = Shape(
+    "Rounded Tip", "M -1 1 C -1 1 -1 -0.3333 0 -1 C 1 -0.3333 1 1 1 1 Z"
 )

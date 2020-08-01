@@ -1,0 +1,26 @@
+name: Lint 🚩
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Black-Flake8-mypy
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.6"
+      - name: Check formatting with Black
+        run: |
+          pip install black
+          black --check .
+      - name: Lint with Flake8
+        run: |
+          pip install flake8
+          flake8 .  --statistics
+      - name: Check types with mypy
+        run: |
+          pip install mypy
+          mypy src/ctrlair

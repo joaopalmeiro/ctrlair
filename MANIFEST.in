@@ -1,4 +1,4 @@
-# Include the README
+# Include the README file
 include *.md
 
 # Include the license file

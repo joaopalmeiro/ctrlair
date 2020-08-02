@@ -16,7 +16,7 @@ LOCALE: Dict[str, Union[str, List[int], List[str]]] = {
 
 
 def lcontrast_theme_tooltip():
-    from IPython.display import HTML
+    from IPython.display import display, HTML
 
     # More info: https://github.com/vega/vega-tooltip/blob/master/vega-tooltip.scss
     display(

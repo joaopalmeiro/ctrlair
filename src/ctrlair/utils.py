@@ -1,4 +1,4 @@
-import altair as alt
+import altair as alt  # type: ignore
 from typing import Any
 
 

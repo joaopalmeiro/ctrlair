@@ -2,6 +2,7 @@ import altair as alt  # type: ignore
 from typing import Dict, Callable, Union, List
 from functools import partial
 
+from .utils import print_dict
 
 COLORS: Dict[str, str] = {
     "white": "#FFFFFF",
@@ -182,3 +183,13 @@ def set_alt_aesthetic(
 
 def set_default_alt_aesthetic() -> None:
     alt.themes.enable("default")
+
+
+def get_alt_themes(verbose=True):
+    if verbose:
+        print(f"Current theme: {repr(alt.themes.active)}")
+    return alt.themes.names()
+
+
+def get_alt_aesthetic():
+    print_dict(alt.themes.get()())

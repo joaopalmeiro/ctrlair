@@ -1,5 +1,6 @@
 import altair as alt  # type: ignore
 from typing import Any
+from json import dumps
 
 
 def is_namedtuple(obj: Any) -> bool:
@@ -43,3 +44,7 @@ def is_compound_chart(obj: Any) -> bool:
         or is_repeated_chart(obj)
         or is_faceted_chart(obj)
     )
+
+
+def print_dict(d):
+    print(dumps(d, indent=4))

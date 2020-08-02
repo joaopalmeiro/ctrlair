@@ -1,12 +1,13 @@
-from setuptools import setup, find_packages
 import pathlib
+
+from setuptools import find_packages, setup
 
 here = pathlib.Path(__file__).parent.resolve()
 
 long_description = (here / "README.md").read_text(encoding="utf-8")
 
 
-def get_version(root, rel_path):
+def get_version(root: pathlib.Path, rel_path: str) -> str:
     for line in (root / rel_path).read_text().splitlines():
         if line.startswith("__version__"):
             delim = '"' if '"' in line else "'"

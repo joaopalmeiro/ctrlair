@@ -1,12 +1,13 @@
+# More info: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
+
 name: Publish to PyPI
 
 on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
+    paths:
+      - "src/ctrlair/__init__.py"
 
 jobs:
   build-and-publish:

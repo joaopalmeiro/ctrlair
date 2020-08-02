@@ -1,3 +1,5 @@
+# More info: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions
+
 name: Lint
 
 on: [push, pull_request]
@@ -29,7 +31,7 @@ jobs:
       - name: Lint with Flake8
         run: |
           # Flake8 Rules: https://www.flake8rules.com/
-          flake8 --count --statistics --max-line-length=120 .
+          flake8 --count --show-source --statistics --max-line-length=120 .
       - name: Check types with mypy
         run: |
           mypy src/ctrlair

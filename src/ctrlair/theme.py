@@ -1,5 +1,6 @@
 import altair as alt  # type: ignore
 from typing import Dict, Callable, Union, List
+from functools import partial
 
 
 COLORS: Dict[str, str] = {
@@ -39,9 +40,7 @@ def lcontrast_theme_tooltip() -> None:
     )
 
 
-def lcontrast_theme(
-    width: int = 300, height: int = 300
-) -> Dict[str, Dict[str, object]]:
+def lcontrast_theme(width: int, height: int) -> Dict[str, Dict[str, object]]:
     font = "Roboto"
 
     return {
@@ -124,6 +123,8 @@ def set_alt_aesthetic(
     theme_name: str = "lcontrast",
     tooltip_theme_name: str = "lcontrast",
     disable_max_rows: bool = False,
+    width: int = 300,
+    height: int = 300,
 ) -> None:
     if theme_name in THEMES:
         tooltip_theme = set_alt_tooltip_theme(tooltip_theme_name)
@@ -146,7 +147,10 @@ def set_alt_aesthetic(
             },
         )
 
-        alt.themes.register(theme_name, THEMES[theme_name])
+        # More info: https://github.com/altair-viz/altair/blob/master/altair/utils/plugin_registry.py
+        alt.themes.register(
+            theme_name, partial(THEMES[theme_name], width=width, height=height)
+        )
         alt.themes.enable(theme_name)
 
         if disable_max_rows:

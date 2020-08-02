@@ -15,7 +15,7 @@ LOCALE: Dict[str, Union[str, List[int], List[str]]] = {
 }
 
 
-def lcontrast_theme_tooltip():
+def lcontrast_theme_tooltip() -> None:
     from IPython.display import display, HTML  # type: ignore
 
     # More info: https://github.com/vega/vega-tooltip/blob/master/vega-tooltip.scss
@@ -155,5 +155,5 @@ def set_alt_aesthetic(
         raise Exception(f"The {repr(theme_name)} theme is not available.")
 
 
-def set_default_alt_aesthetic():
+def set_default_alt_aesthetic() -> None:
     alt.themes.enable("default")

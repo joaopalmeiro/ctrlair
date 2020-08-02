@@ -17,10 +17,10 @@ jobs:
           pip install black
           black --check .
       - name: Check the ordering of imports with isort
-          run: |
-            pip install isort
-            # More info: https://timothycrosley.github.io/isort/docs/configuration/options/
-            isort --check --diff .
+        run: |
+          pip install isort
+          # More info: https://timothycrosley.github.io/isort/docs/configuration/options/
+          isort --check --diff .
       - name: Lint with Flake8
         run: |
           # Flake8 Rules: https://www.flake8rules.com/

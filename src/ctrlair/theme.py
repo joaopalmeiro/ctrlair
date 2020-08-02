@@ -145,7 +145,7 @@ def set_alt_aesthetic(
     width: int = 300,
     height: int = 300,
 ) -> None:
-    if theme_name in THEMES:
+    if theme_name in THEMES or theme_name in get_alt_themes(verbose=False):
         tooltip_theme = set_alt_tooltip_theme(tooltip_theme_name)
 
         # More info: https://github.com/vega/vega-embed
@@ -170,9 +170,10 @@ def set_alt_aesthetic(
         )
 
         # More info: https://github.com/altair-viz/altair/blob/master/altair/utils/plugin_registry.py
-        alt.themes.register(
-            theme_name, partial(THEMES[theme_name], width=width, height=height)
-        )
+        if theme_name in THEMES:
+            alt.themes.register(
+                theme_name, partial(THEMES[theme_name], width=width, height=height)
+            )
         alt.themes.enable(theme_name)
 
         if disable_max_rows:

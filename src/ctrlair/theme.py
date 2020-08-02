@@ -25,7 +25,7 @@ I18N_PT_PT: Dict[str, str] = {
 
 
 def lcontrast_theme_tooltip() -> None:
-    from IPython.display import display, HTML  # type: ignore
+    from IPython.display import HTML, display  # type: ignore
 
     # More info: https://github.com/vega/vega-tooltip/blob/master/vega-tooltip.scss
     display(

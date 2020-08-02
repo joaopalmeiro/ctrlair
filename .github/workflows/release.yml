@@ -1,4 +1,4 @@
-name: Publish Ctrlair 📦 to PyPI
+name: Publish to PyPI
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Lint 🚩
+name: Lint
 
 on: [push, pull_request]
 

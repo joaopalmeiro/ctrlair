@@ -25,11 +25,11 @@ jobs:
       - name: Check the ordering of imports with isort
         run: |
           # More info: https://timothycrosley.github.io/isort/docs/configuration/options/
-          isort --check --diff .
+          isort --check --diff --verbose .
       - name: Lint with Flake8
         run: |
           # Flake8 Rules: https://www.flake8rules.com/
-          flake8 --statistics --max-line-length=120 .
+          flake8 --count --statistics --max-line-length=120 .
       - name: Check types with mypy
         run: |
           mypy src/ctrlair

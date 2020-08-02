@@ -14,6 +14,12 @@ LOCALE: Dict[str, Union[str, List[int], List[str]]] = {
     "grouping": [3],
     "currency": ["", "€"],
 }
+I18N_EN: Dict[str, str] = {"PNG_ACTION": "Save as PNG", "SVG_ACTION": "Save as SVG"}
+I18N_PT_PT: Dict[str, str] = {
+    "PNG_ACTION": "Guardar como PNG",
+    "SVG_ACTION": "Guardar como SVG",
+    "EDITOR_ACTION": "Abrir no Vega Editor",
+}
 
 
 def lcontrast_theme_tooltip() -> None:
@@ -119,10 +125,22 @@ def set_alt_tooltip_theme(tooltip_theme_name: str) -> str:
         )
 
 
+def set_button_lang(button_lang: str) -> Dict[str, str]:
+    if button_lang.lower() == "en":
+        return I18N_EN
+    elif button_lang.lower() == "pt-pt":
+        return I18N_PT_PT
+    else:
+        raise Exception(f"The {repr(button_lang)} language/locale is not available.")
+
+
 def set_alt_aesthetic(
     theme_name: str = "lcontrast",
     tooltip_theme_name: str = "lcontrast",
     disable_max_rows: bool = False,
+    renderer: str = "svg",
+    show_button: bool = True,
+    button_lang: str = "en",
     width: int = 300,
     height: int = 300,
 ) -> None:
@@ -138,12 +156,15 @@ def set_alt_aesthetic(
                     "source": False,
                     "compiled": False,
                     "editor": True,
-                },
+                }
+                if show_button
+                else False,
                 "scaleFactor": 5,
-                "i18n": {"PNG_ACTION": "Save as PNG", "SVG_ACTION": "Save as SVG"},
+                "i18n": set_button_lang(button_lang),
                 "tooltip": {"theme": tooltip_theme},
-                "renderer": "svg",
+                "renderer": renderer,
                 "formatLocale": LOCALE,
+                "downloadFileName": "chart",
             },
         )
 

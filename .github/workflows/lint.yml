@@ -18,8 +18,9 @@ jobs:
           black --check .
       - name: Lint with Flake8
         run: |
+          # Flake8 Rules: https://www.flake8rules.com/
           pip install flake8
-          flake8 .  --statistics
+          flake8 .  --statistics --max-line-length=120
       - name: Check types with mypy
         run: |
           pip install mypy

@@ -47,7 +47,32 @@ up_pointing_angle_bracket = Shape(
 )
 
 hourglass = Shape("Hourglass", "M -1 -1 L 1 -1 L -1 1 L -1 1 L 1 1 L -1 -1 Z")
+horizontal_hourglass = Shape(
+    "Horizontal Hourglass", "M 1 1 L 1 -1 L -1 1 L -1 1 L -1 -1 L 0 0 Z"
+)
 
 rounded_tip = Shape(
     "Rounded Tip", "M -1 1 C -1 1 -1 -0.3333 0 -1 C 1 -0.3333 1 1 1 1 Z"
 )
+
+south_east_arrow_tip = Shape(
+    "South East Arrow Tip", "M 0 -1 L 1 1 L -1 0 L -1 0 L 0 0 Z"
+)
+north_west_arrow_tip = Shape(
+    "North West Arrow Tip", "M 1 0 L -1 -1 L 0 1 L 0 1 L 0 0 Z"
+)
+
+south_east_squared_arrow_tip = Shape(
+    "South East Squared Arrow Tip", "M -1 -1 L -1 -1 L 0 -1 L 1 1 L -1 0 Z"
+)
+
+lower_left_vertical_parallelogram = Shape(
+    "Vertical Parallelogram (Lower Left to Upper Right)",
+    "M 0 -1 L 1 -1 L 0 1 L -1 1 L 0 -1 Z",
+)
+upper_left_vertical_parallelogram = Shape(
+    "Vertical Parallelogram (Upper Left to Lower Right)",
+    "M 0 -1 L 1 1 L 0 1 L -1 -1 L 0 -1 Z",
+)
+
+heart = Shape("Heart", "M 1 0 L 0 1 L -1 0 A 0.4 0.4 0 0 1 0 -1 A 0.4 0.4 0 0 1 1 0")

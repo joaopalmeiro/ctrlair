@@ -1,6 +1,7 @@
-import altair as alt  # type: ignore
-from typing import Any
 from json import dumps
+from typing import Any, Dict
+
+import altair as alt  # type: ignore
 
 
 def is_namedtuple(obj: Any) -> bool:
@@ -46,5 +47,5 @@ def is_compound_chart(obj: Any) -> bool:
     )
 
 
-def print_dict(d):
+def print_dict(d: Dict) -> None:
     print(dumps(d, indent=4))

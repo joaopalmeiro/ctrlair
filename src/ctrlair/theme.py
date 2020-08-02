@@ -1,6 +1,7 @@
-import altair as alt  # type: ignore
-from typing import Dict, Callable, Union, List
 from functools import partial
+from typing import Callable, Dict, List, Union
+
+import altair as alt  # type: ignore
 
 from .utils import print_dict
 
@@ -186,11 +187,11 @@ def set_default_alt_aesthetic() -> None:
     alt.themes.enable("default")
 
 
-def get_alt_themes(verbose=True):
+def get_alt_themes(verbose: bool = True) -> List[str]:
     if verbose:
-        print(f"Current theme: {repr(alt.themes.active)}")
+        print(f"{repr(alt.themes.active)} is the current Altair theme.")
     return alt.themes.names()
 
 
-def get_alt_aesthetic():
+def get_alt_aesthetic() -> None:
     print_dict(alt.themes.get()())

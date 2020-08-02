@@ -1,4 +1,5 @@
 import unittest
+
 from ctrlair import shapes
 
 VALID_SVG_PATH_COMMANDS = ["M", "L", "H", "V", "C", "S", "Q", "T", "A", "Z"]

@@ -32,6 +32,8 @@ setup(
         "Intended Audience :: Science/Research",
         "Topic :: Utilities",
         "Topic :: Scientific/Engineering :: Visualization",
+        "Typing :: Typed",
+        "Operating System :: OS Independent",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
         "Programming Language :: Python :: 3",

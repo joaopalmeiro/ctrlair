@@ -10,11 +10,12 @@ COLORS: Dict[str, str] = {
     "light_gray": "#EBEBEB",
     "black": "#44475A",
 }
+# More info: https://ciberduvidas.iscte-iul.pt/consultorio/perguntas/como-usar-o-simbolo-do-euro/30249
 LOCALE: Dict[str, Union[str, List[int], List[str]]] = {
     "decimal": ".",
     "thousands": ",",
     "grouping": [3],
-    "currency": ["", "€"],
+    "currency": ["€", ""],
 }
 I18N_EN: Dict[str, str] = {"PNG_ACTION": "Save as PNG", "SVG_ACTION": "Save as SVG"}
 I18N_PT_PT: Dict[str, str] = {
